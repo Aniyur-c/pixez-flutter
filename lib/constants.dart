@@ -32,8 +32,8 @@ class Constants {
   static const String upstreamTag = "0.9.113";
 
   /// 与 Release tag 对应，用于比较版本；versionLabel 仅用于界面展示
-  static String tagName = "0.9.113-aniyur.1";
-  static String versionLabel = "0.9.113 aniyur.1";
+  static String tagName = "0.9.2";
+  static String versionLabel = "0.9.2";
   static const isGooglePlay = bool.fromEnvironment(
     "IS_GOOGLEPLAY",
     defaultValue: false,
