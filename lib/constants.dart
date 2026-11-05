@@ -18,7 +18,22 @@ import 'dart:io';
 
 class Constants {
   static const String no_h = 'assets/images/h_long.jpg';
-  static String tagName = "0.9.113";
+  /// 本仓库（下游分支）
+  static const String repoName = "Aniyur-c/pixez-flutter";
+  static const String repoUrl = "https://github.com/Aniyur-c/pixez-flutter";
+  static const String releasesUrl =
+      "https://github.com/Aniyur-c/pixez-flutter/releases";
+  static const String releasesApi =
+      "https://api.github.com/repos/Aniyur-c/pixez-flutter/releases/latest";
+
+  /// 上游项目
+  static const String upstreamName = "Notsfsssf/pixez-flutter";
+  static const String upstreamUrl = "https://github.com/Notsfsssf/pixez-flutter";
+  static const String upstreamTag = "0.9.113";
+
+  /// 与 Release tag 对应，用于比较版本；versionLabel 仅用于界面展示
+  static String tagName = "0.9.113-aniyur.1";
+  static String versionLabel = "0.9.113 aniyur.1";
   static const isGooglePlay = bool.fromEnvironment(
     "IS_GOOGLEPLAY",
     defaultValue: false,

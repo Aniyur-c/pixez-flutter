@@ -244,7 +244,7 @@ class _AboutPageState extends State<AboutPage> {
             ListTile(
               leading: Icon(FluentIcons.device_off),
               title: Text(I18n.of(context).repo_address),
-              subtitle: Text('github.com/Notsfsssf/pixez-flutter'),
+              subtitle: Text(Constants.repoName),
               trailing: Visibility(
                 child: NewVersionChip(),
                 visible: hasNewVersion,
@@ -259,13 +259,13 @@ class _AboutPageState extends State<AboutPage> {
                             mainAxisSize: MainAxisSize.min,
                             children: <Widget>[
                               ListTile(
-                                title: Text('Version ${Constants.tagName}'),
+                                title: Text('Version ${Constants.versionLabel}'),
                                 subtitle: Text(
                                     I18n.of(context).go_to_project_address),
                                 onPressed: () async {
                                   try {
                                     await launchUrl(Uri.parse(
-                                        'https://github.com/Notsfsssf/pixez-flutter'));
+                                        Constants.repoUrl));
                                   } catch (e) {}
                                 },
                                 trailing: IconButton(
@@ -273,7 +273,7 @@ class _AboutPageState extends State<AboutPage> {
                                     onPressed: () async {
                                       try {
                                         await launchUrl(Uri.parse(
-                                            'https://github.com/Notsfsssf/pixez-flutter'));
+                                            Constants.repoUrl));
                                       } catch (e) {}
                                     }),
                               ),

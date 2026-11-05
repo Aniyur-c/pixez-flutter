@@ -22,7 +22,7 @@ Future<Result> checkUpdate(String arg) async {
   try {
     Response response =
         await Dio(BaseOptions(baseUrl: 'https://api.github.com'))
-            .get('/repos/Notsfsssf/pixez-flutter/releases/latest');
+            .get(Constants.releasesApi);
     String tagName = response.data['tag_name'];
     Updater.latestVersion = tagName;
     LPrinter.d("tagName:$tagName ");

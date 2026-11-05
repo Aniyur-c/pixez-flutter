@@ -16,6 +16,7 @@
 
 import 'package:dio/dio.dart';
 import 'package:material_ui/material_ui.dart';
+import 'package:pixez/constants.dart';
 import 'package:pixez/i18n.dart';
 import 'package:pixez/page/about/last_release.dart';
 import 'package:url_launcher/url_launcher_string.dart';
@@ -40,7 +41,7 @@ class _UpdatePageState extends State<UpdatePage> {
   initData() async {
     try {
       Response response = await _dio.get(
-        'https://api.github.com/repos/Notsfsssf/pixez-flutter/releases/latest',
+        Constants.releasesApi,
       );
       final result = LastRelease.fromJson(response.data);
       setState(() {

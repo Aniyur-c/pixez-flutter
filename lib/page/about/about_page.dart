@@ -180,6 +180,38 @@ class _AboutPageState extends State<AboutPage> {
               },
             ),
             Padding(
+              padding: const EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
+              child: Text('本分支（下游构建）'),
+            ),
+            Card(
+              margin: EdgeInsets.symmetric(horizontal: 12.0),
+              clipBehavior: Clip.hardEdge,
+              child: Column(
+                children: <Widget>[
+                  ListTile(
+                    leading: Icon(Icons.fork_right),
+                    title: Text(Constants.repoName),
+                    subtitle: Text(
+                      '基于上游 ${Constants.upstreamName} ${Constants.upstreamTag}',
+                    ),
+                    trailing: Icon(Icons.link),
+                    onTap: () {
+                      try {
+                        launchUrlString(Constants.repoUrl);
+                      } catch (e) {}
+                    },
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.info_outline),
+                    title: Text('非官方分支'),
+                    subtitle: Text(
+                      '与原作者无关。底栏等改动只在本分支提供，问题请提到本仓库；代码沿用 GPL-3.0。',
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
               padding: const EdgeInsets.all(16.0),
               child: Text('Contributors'),
             ),
@@ -254,7 +286,7 @@ class _AboutPageState extends State<AboutPage> {
               ListTile(
                 leading: Icon(Icons.device_hub),
                 title: Text(I18n.of(context).repo_address),
-                subtitle: Text('github.com/Notsfsssf/pixez-flutter'),
+                subtitle: Text(Constants.repoName),
                 trailing: Visibility(
                   child: NewVersionChip(),
                   visible: hasNewVersion,
@@ -274,14 +306,14 @@ class _AboutPageState extends State<AboutPage> {
                             mainAxisSize: MainAxisSize.min,
                             children: <Widget>[
                               ListTile(
-                                title: Text('Version ${Constants.tagName}'),
+                                title: Text('Version ${Constants.versionLabel}'),
                                 subtitle: Text(
                                   I18n.of(context).go_to_project_address,
                                 ),
                                 onTap: () {
                                   try {
                                     launchUrlString(
-                                      'https://github.com/Notsfsssf/pixez-flutter',
+                                      Constants.repoUrl,
                                     );
                                   } catch (e) {}
                                 },
@@ -290,11 +322,21 @@ class _AboutPageState extends State<AboutPage> {
                                   onPressed: () {
                                     try {
                                       launchUrlString(
-                                        'https://github.com/Notsfsssf/pixez-flutter',
+                                        Constants.repoUrl,
                                       );
                                     } catch (e) {}
                                   },
                                 ),
+                              ),
+                              ListTile(
+                                title: Text('上游项目'),
+                                subtitle: Text(Constants.upstreamName),
+                                onTap: () {
+                                  try {
+                                    launchUrlString(Constants.upstreamUrl);
+                                  } catch (e) {}
+                                },
+                                trailing: Icon(Icons.open_in_new),
                               ),
                               ListTile(
                                 title: Text(I18n.of(context).check_for_updates),
