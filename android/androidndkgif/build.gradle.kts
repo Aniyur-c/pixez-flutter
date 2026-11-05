@@ -5,6 +5,8 @@ plugins {
 android {
     namespace = "com.waynejo.androidndkgif"
     compileSdk = 37
+    // Google 现在只发布 platforms;android-37.0/37.1/37.2，没有 android-37
+    compileSdkMinor = 0
 
     defaultConfig {
         minSdk = 21

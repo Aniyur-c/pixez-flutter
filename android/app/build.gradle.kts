@@ -57,14 +57,16 @@ if (keystorePropertiesFile.exists()) {
 val isGooglePlay = dartEnvironmentVariables["IS_GOOGLEPLAY"] as Boolean
 
 val packageName = if (isGooglePlay) {
-    "com.perol.play.pixez"
+    "com.aniyur.play.pixez"
 } else {
-    "com.perol.pixez"
+    "com.aniyur.pixez"
 }
 
 android {
     namespace = "com.perol.pixez"
     compileSdk = 37
+    // Google 现在只发布 platforms;android-37.0/37.1/37.2，没有 android-37
+    compileSdkMinor = 0
     ndkVersion = "28.2.13676358"
 
     val isBuildingBundle = gradle.startParameter.taskNames.any { it.lowercase().contains("bundle") }
@@ -83,7 +85,7 @@ android {
         minSdk = flutter.minSdkVersion
         targetSdk = 37
         versionCode = 10010140
-        versionName = "0.9.113 vitamin"
+        versionName = "0.9.113 aniyur"
         buildConfigField("boolean", "IS_GOOGLEPLAY", isGooglePlay.toString())
         ndk {
             abiFilters.addAll(arrayOf("armeabi-v7a", "arm64-v8a", "x86_64"))
