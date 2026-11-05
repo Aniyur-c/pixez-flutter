@@ -1,3 +1,5 @@
+// Modified on 2026-11-05 for the downstream fork (see NOTICE.md): 更新检查指向本仓库。
+
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:pixez/constants.dart';

@@ -11,6 +11,14 @@
 
 🎵 Mili - In Hell We Live, Lament 🎵 
 
+> **本仓库是下游分支（非官方）**
+>
+> 基于上游 [Notsfsssf/pixez-flutter](https://github.com/Notsfsssf/pixez-flutter) 的 `0.9.113`，包名 `com.aniyur.pixez`，可与官方版本共存安装。
+> 与原作者无隶属关系，也未获其背书；本分支的安装包只在[本仓库 Releases](https://github.com/Aniyur-c/pixez-flutter/releases) 提供，改动清单见 [NOTICE.md](./NOTICE.md)。
+> 下面表格里的官方渠道（Google Play / App Store / 上游 Release）指向原项目，与本分支无关。
+>
+> This is an unofficial downstream fork. See [NOTICE.md](./NOTICE.md) for the list of modifications.
+
 # 下载
 
 推荐渠道顺序为从左到右。

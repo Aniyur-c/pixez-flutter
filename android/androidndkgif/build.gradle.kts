@@ -1,3 +1,5 @@
+// Modified on 2026-11-05 for the downstream fork (see NOTICE.md): compileSdkMinor。
+
 plugins {
     id("com.android.library")
 }

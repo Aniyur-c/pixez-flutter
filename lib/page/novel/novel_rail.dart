@@ -11,7 +11,10 @@
  *
  *  You should have received a copy of the GNU General Public License along with
  *  this program. If not, see <http://www.gnu.org/licenses/>.
+ *
+ * Modified on 2026-11-05 for the downstream fork (see NOTICE.md): 接入悬浮磨砂底栏。
  */
+
 import 'dart:io';
 
 import 'package:material_ui/material_ui.dart';
